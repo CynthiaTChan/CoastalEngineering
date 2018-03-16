@@ -11,6 +11,7 @@ def celerity(wavelength, T):
     cp = wavelength/T
     return(cp)
 
+
 @u.wraps(u.m/u.s, [u.s], False)
 def celerity_phase_deep(T):
     '''Returns the phase velocity in deep water conditions'''
@@ -40,7 +41,7 @@ def wavenumber(T, h):
     less the angular frequency squared should be of different sign. The bounds
     are written inside this function and should be changed later.'''
     k_bound1 = 0
-    k_bound2 = 10
+    k_bound2 = 20
 
     def _dispersion_k(k):
         return (g.magnitude * k * np.tanh(k * h) - (((2 * np.pi) / T))**2)
